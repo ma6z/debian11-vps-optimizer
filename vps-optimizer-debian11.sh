@@ -35,20 +35,13 @@ else
 fi
 
 # -----------------------------
-# 4️⃣ CPU & memory optimization
+# 4️⃣ CPU optimization
 # -----------------------------
 echo "[INFO] Setting CPU governor to performance..."
 for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
     [[ -f $cpu ]] && echo performance > "$cpu"
 done
 
-echo "[INFO] Tweaking memory settings..."
-sysctl -w vm.swappiness=10
-sysctl -w vm.vfs_cache_pressure=50
-echo 1 > /proc/sys/vm/overcommit_memory
-echo 1024 > /proc/sys/vm/nr_hugepages
-
-# -----------------------------
 # 5️⃣ Disk I/O optimization
 # -----------------------------
 echo "[INFO] Optimizing disk scheduler..."
