@@ -34,14 +34,6 @@ else
     echo "[SUCCESS] Hardware virtualization detected."
 fi
 
-# -----------------------------
-# 4️⃣ CPU optimization
-# -----------------------------
-echo "[INFO] Setting CPU governor to performance..."
-for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
-    [[ -f $cpu ]] && echo performance > "$cpu"
-done
-
 # 5️⃣ Disk I/O optimization
 # -----------------------------
 echo "[INFO] Optimizing disk scheduler..."
