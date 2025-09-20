@@ -82,13 +82,6 @@ ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh
 ufw --force enable
-
-# -----------------------------
-# 9️⃣ System monitoring
-# -----------------------------
-echo "[INFO] Installing monitoring tools..."
-apt install -y sysstat iftop htop iotop glances
-
 # -----------------------------
 # 🔟 Optional performance tweaks
 # -----------------------------
